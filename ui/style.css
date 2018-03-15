@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    margin-top: 75px;
+    margin-top: 60px;
 }
 
 .center {
@@ -24,15 +24,14 @@ body {
             font-style:italic;
             color:red;
             padding:20px;
-           padding-top: 50px;
-           padding-left: 20px;
+                    padding-left: 20px;
             }
   .c2{
             font-family:verdona;
             font-style:italic;
             color:green;
             padding:20px;
-               padding-top: 50px;
+              
            padding-left: 20px;
             }
 .c1{
@@ -40,6 +39,6 @@ body {
             font-style:italic;
             color:blue;
             padding:20px;
-               padding-top: 50px;
+              
            padding-left: 20px;
 }
