@@ -19,4 +19,27 @@ body {
 .img-medium {
     height: 200px;
 }
-
+#id1{
+            font-family:verdona;
+            font-style:italic;
+            color:red;
+            padding:20px;
+           padding-top: 50px;
+           padding-left: 20px;
+            }
+  .c2{
+            font-family:verdona;
+            font-style:italic;
+            color:green;
+            padding:20px;
+               padding-top: 50px;
+           padding-left: 20px;
+            }
+.c1{
+            font-family:verdona;
+            font-style:italic;
+            color:blue;
+            padding:20px;
+               padding-top: 50px;
+           padding-left: 20px;
+}
