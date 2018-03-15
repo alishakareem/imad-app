@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 
 var articles={
-    articleOne:{
+    'article-one':{
     title:'Article-one@Alisha',
     heading:'Welcome',
     heading1:'Take Care....',
@@ -20,7 +20,7 @@ content:`<p>Hellooo guysss....Hope all are fine...Here is my first article and a
        enjoyyyy reading it....
     </p>`
 },
-articleTwo:{
+'article-two':{
     title:'Article-two@Alisha',
     heading:'Welcome',
     heading1:'Take Care....',
@@ -37,7 +37,7 @@ content:`<p>Hellooo guysss....Hope all are fine...Here is my second article and 
        enjoyyyy reading it....
     </p>`
 },
-articleThree:{
+'article-three':{
     title:'Article-three@Alisha',
     heading:'Welcome',
     heading1:'Take Care....',
@@ -90,8 +90,10 @@ return htmlTemplate;
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    //articleName==aticle-one
+//articles[articleName]=={}content object for article one
+  res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-one',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
