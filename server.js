@@ -2,7 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var articleOne={
+var articles={
+    articleOne:{
     title:'Article-one@Alisha',
     heading:'Welcome',
     heading1:'Take Care....',
@@ -18,6 +19,41 @@ content:`<p>Hellooo guysss....Hope all are fine...Here is my first article and a
        and now you can see it....
        enjoyyyy reading it....
     </p>`
+},
+articleTwo:{
+    title:'Article-two@Alisha',
+    heading:'Welcome',
+    heading1:'Take Care....',
+content:`<p>Hellooo guysss....Hope all are fine...Here is my second article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>
+     <p>Hellooo guysss....Hope all are fine...Here is my second article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>
+     <p>Hellooo guysss....Hope all are fine...Here is my second article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>`
+},
+articleThree:{
+    title:'Article-three@Alisha',
+    heading:'Welcome',
+    heading1:'Take Care....',
+content:`<p>Hellooo guysss....Hope all are fine...Here is my third article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>
+     <p>Hellooo guysss....Hope all are fine...Here is my third article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>
+     <p>Hellooo guysss....Hope all are fine...Here is my third article and as i said this is the content of the page 
+       and now you can see it....
+       enjoyyyy reading it....
+    </p>`
+}
 };
 function createTemplate(data){
     var title=data.title;
