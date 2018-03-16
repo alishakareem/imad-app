@@ -9,7 +9,7 @@ body {
 }
 
 .text-big {
-    font-size: 300%;
+    font-size: 400%;
 }
 
 .bold {
@@ -22,7 +22,7 @@ body {
 #id1{
             font-family:verdona;
             font-style:italic;
-            color:red;
+            color:blue;
             padding:20px;
                     padding-left: 20px;
             }
