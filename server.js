@@ -96,7 +96,7 @@ app.get('/',function(req,res){
 
 var names=[];
 app.get('/submit-name',function(req,res){
-   var name=req.query.name;//url/submit-name/?name=alisha
+   var name=req.query.name;//url/submit-name?name=alisha
    names.push(name);
    //JSON:javascript object notation
    //converts javascript object into stings
