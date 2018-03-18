@@ -29,3 +29,19 @@ b1.onclick=function(){
     request.open('GET','http://alishakareem13.imad.hasura-app.io/counter',true);
     request.send(null);
 };
+
+//cpturing name
+var ipname=document.getElementById('id1');
+var id1=ipname.value;
+var sub=document.getElementById('id4');
+sub.onclick=function(){
+  
+  var names=['name1','name2','name3','name4'];
+  var list='';
+  for(var i=0;i<names.length;i++)
+  {
+      list="<li>" +names[i]+"<li>";
+  }
+    var ul=document.getElementById('ul1');
+    ul1.innerHTML=list;
+};
