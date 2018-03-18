@@ -57,8 +57,8 @@ sub.onclick=function(){
           }
       }
 };
-    var ipname=document.getElementById('id1');
-var id1=ipname.value;
+    var ipname=document.getElementById('name');
+var name=ipname.value;
  //making request
     request.open('GET','http://alishakareem13.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
