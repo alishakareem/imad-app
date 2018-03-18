@@ -26,6 +26,6 @@ b1.onclick=function(){
   */
     
     //making request
-    request.open('GET','https://alishakareem13.imad-hasura-app.io/counter',true);
+    request.open('GET','https://alishakareem13.imad.hasura-app.io/counter',true);
     request.send(null);
 };
