@@ -124,7 +124,7 @@ app.get('/submit-name:name',function(req,res){
    names.push(name);
    //JSON:javascript object notation
    //converts javascript object into stings
-   res.send(JSON.stringfy(names));
+   res.send(JSON.stringify(names));
 });
 
 
