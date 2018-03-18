@@ -31,8 +31,7 @@ b1.onclick=function(){
 };
 
 //cpturing name
-var ipname=document.getElementById('id1');
-var id1=ipname.value;
+
 var sub=document.getElementById('id4');
 
 sub.onclick=function(){  
@@ -61,4 +60,6 @@ sub.onclick=function(){
  //making request
     request.open('GET','http://alishakareem13.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
+    var ipname=document.getElementById('id1');
+var id1=ipname.value;
 };
