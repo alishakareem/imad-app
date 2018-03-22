@@ -88,7 +88,7 @@ var htmlTemplate=`
     <p>
     ${content}
     </p>
-    >/hr>
+    </hr>
     <h3>
        ${heading1}
     </h3>
