@@ -79,14 +79,16 @@ var htmlTemplate=`
         <div id="id1">
     <div><a href="/">Home</a></div>
     <br>
-    <br>
+    </hr>
     <div>
         <h2>${heading}</h2>
     </div>
     <br>
+    </hr>
     <p>
     ${content}
     </p>
+    >/hr>
     <h3>
        ${heading1}
     </h3>
