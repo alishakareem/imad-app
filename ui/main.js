@@ -1,36 +1,5 @@
-var button=document.getElementById('b1');
-//var counter=0;
-b1.onclick=function(){
-  
-  //making request object
-  var request=new XMLHttpRequest();
-  
-  
-  //response check
-  request.onreadystatechange=function(){
-      if(request.readyState===XMLHttpRequest.DONE)
-      {
-          if(request.status===200)
-          {
-              var counter=request.responseText;
-              var span=document.getElementById('count');
-              span.innerHTML=counter.toString();
-          }
-      }
-  };
-  /*
-  //only for incrementing counter variable when we click on button but changing counter endpoint in server
-  counter=counter+1;
-  var span=document.getElementById('count');
-  span.innerHTML=counter.toString();
-  */
-    
-    //making request
-    request.open('GET','http://alishakareem13.imad.hasura-app.io/counter',true);
-    request.send(null);
-};
 
-//cpturing name
+//submit username,pswrd to login
 
 var sub=document.getElementById('id4');
 
@@ -45,22 +14,25 @@ sub.onclick=function(){
       {
           if(request.status===200)
           {
-             var names=request.responseText;
-             names=JSON.parse(names);
-             var list='';
-            for(var i=0;i<names.length;i++)
-            {
-                list+='<li>' +names[i]+'<li>';
-            }
-            var ul=document.getElementById('ul1');
-            ul1.innerHTML=list;             
+            alert('user logged in');
+          }
+          else if(request.status===403)
+          {
+              alert('username/password is incorrect');
+          }
+          else if(request.status===500)
+          {
+              alert('something went wrong on browser');
           }
       }
 };
-    var ipname=document.getElementById('name');
-var name=ipname.value;
+    var username=document.getElementById('username').value;
+var password=document.getElementById('password').value;
+console.log(username);
+console.log(password);
  //making request
-    request.open('GET','http://alishakareem13.imad.hasura-app.io/submit-name?name=' + name,true);
-    request.send(null);
+    request.open('POST','http://alishakareem13.imad.hasura-app.io/login',true);
+    request.setRequestHeader('Content-Type','application/json');
+    request.send(JSON.stringify({username:username,password}));
 
 };
