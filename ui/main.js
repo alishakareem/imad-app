@@ -33,6 +33,6 @@ console.log(password);
  //making request
     request.open('POST','http://alishakareem13.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.stringify({username:username,password}));
+    request.send(JSON.stringify({username:username,password:password}));
 
 };
