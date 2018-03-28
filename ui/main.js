@@ -1,9 +1,9 @@
 
 //submit username,pswrd to login
 
-var sub=document.getElementById('id4');
+var submit=document.getElementById('submit_btn');
 
-sub.onclick=function(){  
+submit.onclick=function(){  
    //making request object
   var request=new XMLHttpRequest();
   
