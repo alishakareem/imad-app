@@ -1,7 +1,7 @@
 
 //submit username,pswrd to login
 
-var submit=document.getElementById('submit_btn');
+var submit=document.getElementById('sub_btn');
 
 submit.onclick=function(){  
    //making request object
