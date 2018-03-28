@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
+var bodyParser=require('body-parser');
 
 var config={
     user:'alishakareem13',
@@ -50,7 +51,7 @@ return htmlTemplate;
 }
 var app = express();
 app.use(morgan('combined'));
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.get('/',function(req,res){
     res.sendFile(path.join(__dirname,'ui','index.html'));
@@ -71,13 +72,13 @@ app.get('/hash/:input',function(req,res){
  res.send(hashedString);
 });
 
-/*app.post('/create-user',function(req,res){
+app.post('/create-user',function(req,res){
    
    var username=req.body.username;
    var password=req.body.password;
    var salt=crypto.randomBytes(128).toString('hex');
    var dbString=hash(password,salt);
-   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)', [username,dbString] ,function(err,result){
+   pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)', [username,dbString] ,function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } 
@@ -88,7 +89,7 @@ app.get('/hash/:input',function(req,res){
    });
 });
 
-*/
+
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
