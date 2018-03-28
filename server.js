@@ -4,6 +4,7 @@ var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
+var session=require('express-session');
 
 var config={
     user:'alishakareem13',
@@ -52,6 +53,10 @@ return htmlTemplate;
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'somerandomvalue',
+    cookie:{maxAge:1000*60*60*24*30}
+}));
 
 app.get('/',function(req,res){
     res.sendFile(path.join(__dirname,'ui','index.html'));
@@ -112,6 +117,11 @@ app.post('/login',function(req,res){
               var hashedPassword=hash(password,salt);//creating hash based on pswrd submitted and original salt
               if(hashedPassword===dbString)
               {
+                  //set session
+                  req.session.auth={userId:result.rows[0].id};
+                  //set cookie with session id
+                  //internally on the server side,it maps the session id to the object
+                  //{auth:{userId}}
                   res.send('credentials correct');
               }
               else{
@@ -122,6 +132,25 @@ app.post('/login',function(req,res){
        }
    });
 });
+
+//to check the session object
+app.get('/check-login',function(req,res){
+   if(req.session && req.session.auth && req.session.auth.userId)
+   {
+       res.send('you are logged in:'+req.session.auth.userId.toString());
+   } 
+   else
+   {
+       res.send('you are not logged in');
+   }
+});
+
+//logout session
+app.get('/logout',function(req,res){
+   delete req.session.auth;
+   res.send('logged out');
+});
+
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
